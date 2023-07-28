@@ -6,12 +6,15 @@ import "./index.css";
 import App from "./App";
 import Blog from "./Blog";
 import OptinMessage from "./components/OptIn";
+import Subscribe from "./components/Subscribe";
 import reportWebVitals from "./reportWebVitals";
+import * as serviceWorker from "./serviceWorker";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <OptinMessage />
+    <Subscribe />
     <Router>
       <div>
         <Routes>
@@ -24,3 +27,4 @@ root.render(
 );
 
 reportWebVitals();
+serviceWorker.register();

@@ -8,15 +8,15 @@ export default function OptinMessage() {
 
   useEffect(() => {
     let modalValue = localStorage.getItem("openmodal");
-    console.log(modalValue);
     if (modalValue === null) {
       localStorage.setItem("openmodal", "true");
     }
     if (modalValue === "true") {
-      setOpenModal(true);
-      setTimeout(() => {
-        setOpenModal(true);
-      }, 100);
+      // setOpenModal(true);
+      // setOpenModal(true);
+      //   setTimeout(() => {
+      //     setOpenModal(true);
+      //   }, 10);
     }
   }, []);
 
@@ -26,7 +26,8 @@ export default function OptinMessage() {
   };
   const subscribe = () => {
     setLoading(true);
-    fetch(`https://blog-phyw.onrender.com/subscribe`, {
+    //
+    fetch(`https://blog-phyw.onrender.com/emailsubscribe`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +35,7 @@ export default function OptinMessage() {
       body: JSON.stringify({ email }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => 1 + 2)
       .catch((error) =>
         alert("Error: Couldnt subscribe you at the moment, try again later ")
       )
