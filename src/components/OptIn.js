@@ -16,7 +16,7 @@ export default function OptinMessage() {
       setOpenModal(true);
       setTimeout(() => {
         setOpenModal(true);
-      }, 1500);
+      }, 500);
     }
   }, []);
 
